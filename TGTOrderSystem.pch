@@ -1,0 +1,81 @@
+//
+//  TGTOrderSystem.pch
+//  TGTOrderSystem
+//
+//  Created by TGT-Tech on 16/5/5.
+//  Copyright © 2016年 TGT. All rights reserved.
+//
+
+/*
+NSURLErrorUnknown                                       =       -1,         未知请求
+NSURLErrorCancelled                                     =       -999,       请求被取消
+NSURLErrorBadURL                                        =       -1000,      错误的请求URL
+NSURLErrorTimedOut                                      =       -1001,      请求超时
+NSURLErrorUnsupportedURL                                =       -1002,      不被支持的URL
+NSURLErrorCannotFindHost                                =       -1003,      不能找到主机
+NSURLErrorCannotConnectToHost                           =       -1004,      不能连接到主机
+NSURLErrorNetworkConnectionLost                         =       -1005,      网络连接丢失
+NSURLErrorDNSLookupFailed                               =       -1006,      DNS浏览失败
+NSURLErrorHTTPTooManyRedirects                          =       -1007,      HTTP重定向太多
+NSURLErrorResourceUnavailable                           =       -1008,      资源不可用
+NSURLErrorNotConnectedToInternet                        =       -1009,      未连接到互联网
+NSURLErrorRedirectToNonExistentLocation                 =       -1010,      重定向到不存在的位置
+NSURLErrorBadServerResponse                             =       -1011,      错误的服务器响应
+NSURLErrorUserCancelledAuthentication                   =       -1012,      用户取消认证
+NSURLErrorUserAuthenticationRequired                    =       -1013,      需要用户认证
+NSURLErrorZeroByteResource                              =       -1014,      资源不可用
+NSURLErrorCannotDecodeRawData                           =       -1015,      不能解码原始数据
+NSURLErrorCannotDecodeContentData                       =       -1016,      不能解码内容数据
+NSURLErrorCannotParseResponse                           =       -1017,      无法解析响应
+*/
+
+/*
+ 读取iCloud数据失败       9001
+ 创建文档失败             9002
+ 
+ 
+ */
+
+#ifndef TGTOrderSystem_pch
+#define TGTOrderSystem_pch
+
+// 适配尺寸
+#define  KScreenWidth  [UIScreen mainScreen].bounds.size.width
+#define  KScreenHeight [UIScreen mainScreen].bounds.size.height
+#define  KVersion      [[[UIDevice currentDevice] systemVersion] floatValue]
+#define  ADAPTER(number) isPad ? (KScreenWidth / 700) * number : (KScreenWidth / 375) * number
+#define  ADAPTER_HEIGHT(number) (KScreenWidth / 1024) * number
+#define  isPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+
+#define  TITLE_COLOR   [UIColor colorWithRed:0.9176 green: 0.4000 blue:0.1647 alpha:1]
+#define  BG_COLOR      [UIColor colorWithRed:0.9412 green:0.9412 blue:0.9412 alpha:1]
+
+//配置UUID宏定义
+#define Acount @"Identfier"
+#define Server @"AppName"
+
+//版本号
+#define appVersion @"V 1.0.5"
+
+// 测试环境
+//#define  BaseURL_V1  @"http://service6.51tgt.com"
+//#define  BaseURL_V2  @"http://test.51tgt.com"
+//#define  BaseURL_V2  @"http://osstest.51tgt.com:8081"
+//#define  BaseURL_V2  @"http://test.51tgt.com:8080"
+#define  BaseURL_V2  @"http://dev.51tgt.com:8080"
+
+
+// 生产环境
+#define  BaseURL_V1  @"http://service.51tgt.com"
+//#define  BaseURL_V2  @"http://114.55.10.221"
+//#define  BaseURL_V2  @"http://oss.51tgt.com:8080"
+
+#import "NavBarView.h"
+#import "UIView+ViewController.h"
+#import "UIViewExt.h"
+#import "LBProgressHUD.h"
+#import "MJExtension.h"
+#import "MBProgressHUD.h"
+#import "GetOrderImage.h"
+
+#endif /* TGTOrderSystem_pch */
